@@ -47,7 +47,9 @@ I haven't been asked any yet.  :)
 
 == Screenshots ==
 
-1. The checkbox in the Publish box on the Post editing page
+1. The Featured Menus meta box when you *do not* have any Menus created in WordPress.
+
+2. The Featured Menus meta box when you *do* have Menus created in WordPress.
 
 == Changelog ==
 
