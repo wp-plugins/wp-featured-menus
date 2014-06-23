@@ -13,30 +13,30 @@
 /**
  * Provides a mechanism for associating a WordPress Menu with a Page or Post
  *
- * @package WP_Featured_Menus
- * @since WP_Featured_Menus 1.0
+ * @package CV_Featured_Menus
+ * @since CV_Featured_Menus 1.0
  * @author Topher
  */
 
 
 /**
- * Instantiate the WP_Featured_Menus instance
- * @since WP_Featured_Menus 1.0
+ * Instantiate the CV_Featured_Menus instance
+ * @since CV_Featured_Menus 1.0
  */
-add_action( 'plugins_loaded', array( 'WP_Featured_Menus', 'instance' ) );
+add_action( 'plugins_loaded', array( 'CV_Featured_Menus', 'instance' ) );
 
 /**
- * Main WP Featured Menus Class
+ * Main CV Featured Menus Class
  *
- * Contains the main functions for the admin side of WP Featured Menus
+ * Contains the main functions for the admin side of CV Featured Menus
  *
- * @class WP_Featured_Menus
+ * @class CV_Featured_Menus
  * @version 1.0.0
  * @since 1.0
- * @package WP_Featured_Menus
+ * @package CV_Featured_Menus
  * @author Topher
  */
-class WP_Featured_Menus {
+class CV_Featured_Menus {
 
 	/**
 	* Instance handle
@@ -48,7 +48,7 @@ class WP_Featured_Menus {
 	private static $__instance = null;
 
 	/**
-	 * WP_Featured_Menus Constructor, actually contains nothing
+	 * CV_Featured_Menus Constructor, actually contains nothing
 	 *
 	 * @access public
 	 * @return void
@@ -123,7 +123,7 @@ class WP_Featured_Menus {
 		wp_nonce_field( 'wp-featured-menus', 'wp_featured_menus_nonce' );
 
 		// Use get_post_meta to retrieve an existing value from the database.
-		$wpfm_meta_value = get_post_meta( $post->ID, '_wp_featured_menu', true );
+		$wpfm_meta_value = get_post_meta( $post->ID, '_cv_featured_menu', true );
 
 		// Display the form, using the current value.
 
@@ -140,7 +140,7 @@ class WP_Featured_Menus {
 
 		// make sure we have some
 		if ( count( $menus ) > 0 ) {
-			echo '<select name="_wp_featured_menu">' . "\n";
+			echo '<select name="_cv_featured_menu">' . "\n";
 			echo '<option value="">' . __( 'Please choose', 'wp-featured-menus' ) . '</option>' . "\n";
 			foreach ( $menus as $key => $menu ) {
 				$selected = selected( $wpfm_meta_value, $menu->term_id, false );
@@ -184,10 +184,10 @@ class WP_Featured_Menus {
 
 
 		// Sanitize user input
-		$wp_featured_menu = sanitize_text_field( $_POST['_wp_featured_menu'] );
+		$wp_featured_menu = sanitize_text_field( $_POST['_cv_featured_menu'] );
 
 		// Update or create the key/value
-		update_post_meta( $post_id, '_wp_featured_menu', $wp_featured_menu );
+		update_post_meta( $post_id, '_cv_featured_menu', $wp_featured_menu );
 
 	}
 
