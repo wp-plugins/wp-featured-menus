@@ -129,7 +129,7 @@ class T1K_Featured_Menus {
 
 		echo '<p>';
 		esc_html_e( 'Please choose from the existing menus below.  If you need to create a new Menu, please go to ', 'wp-featured-menus' );
-		echo '<a href="' . admin_url( 'nav-menus.php' ) . '">';
+		echo '<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">';
 		esc_html_e( 'the Menu Admin ', 'wp-featured-menus' );
 		echo '</a>.';
 		echo '</p>';
@@ -143,14 +143,13 @@ class T1K_Featured_Menus {
 			echo '<select name="_t1k_featured_menu">' . "\n";
 			echo '<option value="">' . __( 'Please choose', 'wp-featured-menus' ) . '</option>' . "\n";
 			foreach ( $menus as $key => $menu ) {
-				$selected = selected( $wpfm_meta_value, $menu->term_id, false );
-				echo '<option value="' . absint( $menu->term_id ) . '"' . $selected . '>' . esc_html( $menu->name ) . '</option>' . "\n";
+				echo '<option value="' . absint( $menu->term_id ) . '"' . selected( $wpfm_meta_value, $menu->term_id, false ) . '>' . esc_html( $menu->name ) . '</option>' . "\n";
 			}
 			echo '</select>' . "\n";
 		} else {
 			echo '<p>';
 			esc_html_e( 'No menus found, ', 'wp-featured-menus' );
-			echo '<a href="' . admin_url( 'nav-menus.php' ) . '">';
+			echo '<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">';
 			esc_html_e( 'let\'s go make some!', 'wp-featured-menus' );
 			echo '</a></p>';
 		}
