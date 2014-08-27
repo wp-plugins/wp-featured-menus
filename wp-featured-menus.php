@@ -4,7 +4,7 @@
  * Plugin URI: http://codeventure.net
  * Description: Provides a mechanism for associating a WordPress Menu with a Page or Post
  * Author: Topher
- * Version: 1.0
+ * Version: 1.3.1
  * Author URI: http://codeventure.net
  * Text Domain: wp-featured-menus
  */

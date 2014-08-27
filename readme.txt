@@ -2,8 +2,8 @@
 Contributors: topher1kenobe
 Tags: posts, pages, menus, featured
 Requires at least: 3.0
-Tested up to: 3.9.1
-Stable tag: 1.3
+Tested up to: 4.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ I haven't been asked any yet.  :)
 2. The Featured Menus meta box when you *do* have Menus created in WordPress.
 
 == Changelog ==
+
+= 1.3.1 =
+Check for WP 4.0
 
 = 1.3 =
 * Minor code validation changes.  No change in UI or functionality
